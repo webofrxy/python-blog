@@ -11,3 +11,24 @@ def getlist(request):
 
 def getinfo(request):
     return HttpResponse('get部分')
+
+class ArticleListView(ListView):
+    # 页面类型 分类目录或标签列表
+    page_type = ''
+    page_kwarg = 'page'
+    link_type = '1'
+
+    def get_view_cache_key(self):
+        return self.request.get['page']
+    
+    @property
+    def page_num(self):
+        page_kwarg = self.page_kwarg
+        page = self.kwarg.get(page_kwarg) or self.request.GET.get(page_kwarg) or 1
+        return page 
+    
+    def get_queryset_cache_key(self):
+        """
+        子类重写，获得queryset的缓存key
+        """
+        
