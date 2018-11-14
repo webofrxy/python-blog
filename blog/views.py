@@ -31,4 +31,4 @@ class ArticleListView(ListView):
         """
         子类重写，获得queryset的缓存key
         """
-        
+        raise NotImplementedError()
