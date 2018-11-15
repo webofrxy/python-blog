@@ -1,8 +1,8 @@
 # python-blog
 
 ## 环境：
-python 3.6.0
-django 2.0.1
+- python 3.6.0
+- django 2.0.1
 
 ## django 使用经验
 django是python下一款功能比较全面的框架，它有以下一些特点
