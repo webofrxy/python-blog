@@ -10,8 +10,9 @@ def get_user_list(request):
     return HttpResponse(userlist) 
 
 def get_user_info(request):
-
-    return HttpResponse()
+    id = request.POST.get('id')
+    User.objects.filter(id=id).delete()
+    return HttpResponse('删除成功')
 
 def add(request):
     name = request.POST.get('name')
