@@ -18,8 +18,9 @@ from django.urls import include, path
 from blog import views
 
 urlpatterns = [
-    path('blog/getlist', views.getlist),
-    path('blog/getinfo', views.getinfo),
+    path('blog/get_user_list', views.get_user_list),
+    path('blog/get_user_info', views.get_user_info),
+    path('blog/add',views.add),
     path('backend/', include('backend.urls')),
     path('admin/', admin.site.urls),
 ]
